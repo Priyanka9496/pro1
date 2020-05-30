@@ -3,6 +3,7 @@ from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
 from profile_api import serializers
+from rest_framework import viewsets
 
 
 class HelloApiView(APIView):
@@ -43,3 +44,27 @@ class HelloApiView(APIView):
 
     def delete(self,request,pk=None):
         return Response({'method':'DELETE'})
+
+class HelloViewSet(viewsets.ViewSet):
+    def list(self,request):
+        a_viewset=[
+            'uses actions(list,create,retrive,update,destroy)',
+            'automatically maps to urls using routers',
+            'Provides more functonality with less code',
+        ]
+
+
+        return Response({'messgae':'Hello!','a_viewset':a_viewset})
+
+
+    def create(self,request):
+        pass
+
+    def retrive(self,request,pk=None):
+        pass
+
+    def update(self,request,pk=None):
+        pass
+
+    def partial_update(self,request,pk=None):
+        pass
