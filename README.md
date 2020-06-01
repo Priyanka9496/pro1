@@ -1,2 +1,2 @@
- #REST API
- profiles REST API course code.
+ # REST API using Django and Python
+ ## Profiles REST API course code.
